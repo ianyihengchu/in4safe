@@ -98,7 +98,7 @@ const Dashboard = () => {
       <Header />
 
       {/* Main content - using the full height minus header and navbar */}
-      <main className="flex-1 mt-16 mb-20">
+      <main className="flex-1 mt-16 overflow-hidden">
         {activeTab === 'HOME' && (
           <MapView 
             incidents={INCIDENTS} 
