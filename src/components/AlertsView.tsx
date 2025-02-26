@@ -67,6 +67,70 @@ const ALERTS_ITEMS = [
     views: 9100,
     username: 'Username',
     image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 9,
+    title: 'EMERGENCY ALERT',
+    content: 'Major traffic accident on Highway 401. Multiple lanes blocked. Expect significant delays for the next 2-3 hours. Alternative routes recommended.',
+    views: 12450,
+    username: 'TrafficAlert',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 10,
+    title: 'WEATHER WARNING',
+    content: 'Heavy snowfall expected tonight. Accumulation of 15-20cm possible. Reduced visibility and slippery roads. Exercise caution if traveling.',
+    views: 8320,
+    username: 'WeatherWatch',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 11,
+    title: 'ROAD CLOSURE',
+    content: 'Yonge Street between Bloor and Wellesley closed due to water main break. Repair crews on site. Expected to reopen tomorrow morning.',
+    views: 5670,
+    username: 'CityUpdates',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 12,
+    title: 'PUBLIC SAFETY',
+    content: 'Reports of suspicious activity near Riverdale Park. Police investigating. Residents advised to be vigilant and report unusual behavior.',
+    views: 7890,
+    username: 'SafetyAlert',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 13,
+    title: 'TRANSIT DELAY',
+    content: 'Line 1 subway experiencing delays due to signal problems at St. Clair station. Shuttle buses operating. Allow extra time for your commute.',
+    views: 9420,
+    username: 'TransitUpdates',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 14,
+    title: 'COMMUNITY EVENT',
+    content: 'Annual street festival this weekend on College Street. Road closures in effect Saturday and Sunday. Free admission, family-friendly activities.',
+    views: 3560,
+    username: 'CommunityHub',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 15,
+    title: 'POWER OUTAGE',
+    content: 'Widespread power outage affecting Scarborough area. Crews working to restore service. Estimated restoration time is 8PM tonight.',
+    views: 11230,
+    username: 'UtilityAlert',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
+  },
+  {
+    id: 16,
+    title: 'HEALTH ADVISORY',
+    content: 'Air quality warning in effect due to nearby forest fires. Those with respiratory conditions advised to limit outdoor activities until conditions improve.',
+    views: 6750,
+    username: 'HealthDept',
+    image: '/lovable-uploads/766047d0-d5be-4d4f-b1c6-a2d9491aa398.png'
   }
 ];
 
