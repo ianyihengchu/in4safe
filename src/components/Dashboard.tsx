@@ -65,7 +65,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#8E9196]">
+    <div className="flex flex-col h-screen bg-black">
       {/* App header - using the Header component from Index page */}
       <Header />
 
