@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Header from './Header';
 import AddAlertForm from './AddAlertForm';
 import NewsView from './NewsView';
+import AlertsView from './AlertsView';
 
 // Sample incident data
 const INCIDENTS = [
@@ -108,6 +109,10 @@ const Dashboard = () => {
         
         {activeTab === 'NEWS' && (
           <NewsView className="animate-fade-in" />
+        )}
+        
+        {activeTab === 'ALERTS' && (
+          <AlertsView className="animate-fade-in" />
         )}
         
         {selectedIncident && (
