@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import MapView from './MapView';
 import IncidentPopup from './IncidentPopup';
 import Navbar from './Navbar';
-import { Flame, Search } from 'lucide-react';
+import Header from './Header';
 
 // Sample incident data
 const INCIDENTS = [
@@ -16,7 +16,7 @@ const INCIDENTS = [
     description: 'Fire alert: road closed. Please change route beforehand.',
     image: '/lovable-uploads/bf5298a4-31da-4e5c-b30d-756ec5c35e43.png',
     position: { lat: 43.655, lng: -79.387 },
-    icon: <Flame className="text-red-500" />
+    icon: '🔥'
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const INCIDENTS = [
     address: '456 King Street, Toronto, ON',
     description: 'Recent assault reported in this area. Stay vigilant.',
     position: { lat: 43.645, lng: -79.375 },
-    icon: '🔪'
+    icon: '⚠️'
   },
   {
     id: 4,
@@ -65,25 +65,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* App header */}
-      <header className="bg-[#1A1F2C] text-white py-4 px-6 flex justify-between items-center z-20 fixed top-0 w-full">
-        <h1 className="text-2xl font-bold text-brand-gold">IN4SAFE</h1>
-        <div className="flex items-center gap-6">
-          <a href="#profile" className="text-brand-gold hover:text-brand-gold-light">Profile</a>
-          <div className="relative">
-            <input 
-              type="text" 
-              placeholder="Search" 
-              className="bg-[#333] text-white rounded-full px-4 py-1 pl-10 w-56"
-            />
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
-          </div>
-        </div>
-      </header>
+    <div className="flex flex-col h-screen bg-[#8E9196]">
+      {/* App header - using the Header component from Index page */}
+      <Header />
 
-      {/* Main content */}
-      <main className="flex-1 mt-16 mb-16">
+      {/* Main content - using the full height minus header and navbar */}
+      <main className="flex-1 mt-16 mb-20">
         <MapView 
           incidents={INCIDENTS} 
           homeLocation={HOME_LOCATION}

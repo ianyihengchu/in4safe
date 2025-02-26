@@ -4,28 +4,28 @@ import { Home, PlusCircle, Bell, Newspaper } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-[#1A1F2C] text-white py-4 z-20">
-      <div className="container mx-auto flex justify-around items-center">
-        <NavItem icon={<Home size={20} />} label="HOME" active />
-        <NavItem icon={<PlusCircle size={20} />} label="ADD" />
-        <NavItem icon={<Bell size={20} />} label="ALERTS" />
-        <NavItem icon={<Newspaper size={20} />} label="NEWS" />
+    <nav className="fixed bottom-0 left-0 right-0 z-20">
+      <div className="bg-white rounded-full mx-4 mb-4 shadow-lg">
+        <div className="flex justify-around items-center py-3 px-6">
+          <NavItem label="HOME" active />
+          <NavItem label="ADD" />
+          <NavItem label="ALERTS" />
+          <NavItem label="NEWS" />
+        </div>
       </div>
     </nav>
   );
 };
 
 interface NavItemProps {
-  icon: React.ReactNode;
   label: string;
   active?: boolean;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ icon, label, active }) => {
+const NavItem: React.FC<NavItemProps> = ({ label, active }) => {
   return (
-    <div className={`flex flex-col items-center ${active ? 'text-brand-gold' : 'text-gray-400'}`}>
-      {icon}
-      <span className="text-xs mt-1 font-semibold">{label}</span>
+    <div className={`px-4 ${active ? 'text-black font-bold underline' : 'text-gray-500'}`}>
+      {label}
     </div>
   );
 };
