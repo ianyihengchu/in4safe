@@ -93,26 +93,32 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-black">
+    <div className="flex flex-col h-screen bg-black overflow-hidden">
       {/* App header - using the Header component from Index page */}
       <Header />
 
-      {/* Main content - using the full height minus header and navbar */}
-      <main className="flex-1 mt-16 overflow-hidden">
-        {activeTab === 'HOME' && (
+      {/* Main content - map always at the bottom, other content floating above */}
+      <main className="flex-1 mt-16 relative overflow-hidden">
+        {/* Map view - always present in the background */}
+        <div className="absolute inset-0 z-0">
           <MapView 
             incidents={INCIDENTS} 
             homeLocation={HOME_LOCATION}
             onIncidentClick={handleIncidentClick}
           />
-        )}
+        </div>
         
+        {/* Overlaid views on top of the map */}
         {activeTab === 'NEWS' && (
-          <NewsView className="animate-fade-in" />
+          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm">
+            <NewsView className="animate-fade-in" />
+          </div>
         )}
         
         {activeTab === 'ALERTS' && (
-          <AlertsView className="animate-fade-in" />
+          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm">
+            <AlertsView className="animate-fade-in" />
+          </div>
         )}
         
         {selectedIncident && (
