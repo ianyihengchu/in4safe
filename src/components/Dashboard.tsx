@@ -4,6 +4,7 @@ import MapView from './MapView';
 import IncidentPopup from './IncidentPopup';
 import Navbar from './Navbar';
 import Header from './Header';
+import AddAlertForm from './AddAlertForm';
 
 // Sample incident data
 const INCIDENTS = [
@@ -55,6 +56,8 @@ const HOME_LOCATION = { lat: 43.648, lng: -79.397 };
 
 const Dashboard = () => {
   const [selectedIncident, setSelectedIncident] = useState<any>(null);
+  const [activeTab, setActiveTab] = useState('HOME');
+  const [showAddForm, setShowAddForm] = useState(false);
 
   const handleIncidentClick = (incident: any) => {
     setSelectedIncident(incident);
@@ -62,6 +65,29 @@ const Dashboard = () => {
 
   const handleClosePopup = () => {
     setSelectedIncident(null);
+  };
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    if (tab === 'ADD') {
+      setShowAddForm(true);
+    } else {
+      setShowAddForm(false);
+    }
+  };
+
+  const handleAddAlertSubmit = (alertData: any) => {
+    console.log('New alert data:', alertData);
+    // Here you would typically send this data to a server
+    // or add it to your local state
+    setShowAddForm(false);
+    setActiveTab('HOME');
+    // Optionally show a success notification
+  };
+
+  const handleCloseAddForm = () => {
+    setShowAddForm(false);
+    setActiveTab('HOME');
   };
 
   return (
@@ -83,10 +109,20 @@ const Dashboard = () => {
             onClose={handleClosePopup}
           />
         )}
+
+        {showAddForm && (
+          <AddAlertForm 
+            onClose={handleCloseAddForm}
+            onSubmit={handleAddAlertSubmit}
+          />
+        )}
       </main>
 
       {/* Navigation bar */}
-      <Navbar />
+      <Navbar 
+        activeTab={activeTab} 
+        onTabChange={handleTabChange} 
+      />
     </div>
   );
 };
