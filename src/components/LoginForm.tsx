@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Google } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import InputWithLabel from './ui/input-with-label';
 import AuthButton from './ui/auth-button';
@@ -99,7 +99,7 @@ const LoginForm = () => {
             variant="outline" 
             fullWidth 
             onClick={() => toast({ description: "Google login would be integrated here" })}
-            icon={<Google size={18} />}
+            icon={<Mail size={18} />}
           >
             Login with Google
           </AuthButton>
