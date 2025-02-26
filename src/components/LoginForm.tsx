@@ -65,10 +65,10 @@ const LoginForm = () => {
           disabled={isLoading}
         />
         
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col space-y-4">
           <button
             type="button"
-            className="text-sm text-white/60 hover:text-brand-gold transition-colors"
+            className="text-sm text-white/60 hover:text-brand-gold transition-colors self-start"
             onClick={() => toast({ description: "Password reset functionality would be integrated here" })}
           >
             Forgot Password
@@ -77,7 +77,7 @@ const LoginForm = () => {
           <AuthButton
             type="submit"
             disabled={isLoading}
-            className="min-w-[120px]"
+            className="w-full"
           >
             {isLoading ? 'Loading...' : 'Login'}
           </AuthButton>
