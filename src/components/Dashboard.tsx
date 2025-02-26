@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import MapView from './MapView';
 import IncidentPopup from './IncidentPopup';
 import Navbar from './Navbar';
-import DashboardHeader from './DashboardHeader';
+import Header from './Header';
 
 // Sample incident data
 const INCIDENTS = [
@@ -66,8 +66,8 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col h-screen bg-black">
-      {/* App header - using the Dashboard-specific header */}
-      <DashboardHeader />
+      {/* App header - using the Header component from Index page */}
+      <Header />
 
       {/* Main content - using the full height minus header and navbar */}
       <main className="flex-1 mt-16 mb-20">

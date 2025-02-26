@@ -5,7 +5,7 @@ import { Home, PlusCircle, Bell, Newspaper } from 'lucide-react';
 const Navbar: React.FC = () => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-20">
-      <div className="bg-white rounded-full mx-12 mb-24 shadow-lg">
+      <div className="bg-white rounded-full mx-16 mb-28 shadow-lg">
         <div className="flex justify-around items-center py-3 px-6">
           <NavItem label="HOME" active />
           <NavItem label="ADD" />
