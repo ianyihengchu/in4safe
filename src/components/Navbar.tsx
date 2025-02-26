@@ -10,8 +10,8 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-20">
-      <div className="bg-white rounded-full mx-16 mb-28 shadow-lg">
-        <div className="flex justify-around items-center py-3 px-6">
+      <div className="bg-[#222222] rounded-t-3xl mx-0 mb-0 shadow-lg">
+        <div className="flex justify-around items-center py-5 px-6">
           <NavItem 
             label="HOME" 
             active={activeTab === 'HOME'} 
@@ -47,7 +47,7 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ label, active, onClick }) => {
   return (
     <div 
-      className={`px-4 cursor-pointer ${active ? 'text-black font-bold underline' : 'text-gray-500'}`}
+      className={`px-4 cursor-pointer ${active ? 'text-brand-gold font-bold' : 'text-white'}`}
       onClick={onClick}
     >
       {label}
