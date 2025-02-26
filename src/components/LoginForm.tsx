@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 import InputWithLabel from './ui/input-with-label';
 import AuthButton from './ui/auth-button';
 
@@ -10,6 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,8 +35,8 @@ const LoginForm = () => {
         description: "You have successfully logged in",
       });
       
-      // In a real app, this would redirect to a dashboard
-      console.log('Logged in with:', { email, password });
+      // Redirect to dashboard
+      navigate('/dashboard');
     } catch (error) {
       toast({
         title: "Failed to login",
