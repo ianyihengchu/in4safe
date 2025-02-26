@@ -65,14 +65,15 @@ const LoginForm = () => {
           disabled={isLoading}
         />
         
-        <div className="flex flex-col space-y-4">
-          <button
+        <div className="grid grid-cols-1 gap-4">
+          <AuthButton 
             type="button"
-            className="text-sm text-white/60 hover:text-brand-gold transition-colors self-start"
+            variant="outline"
+            fullWidth
             onClick={() => toast({ description: "Password reset functionality would be integrated here" })}
           >
             Forgot Password
-          </button>
+          </AuthButton>
           
           <AuthButton
             type="submit"
