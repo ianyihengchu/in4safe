@@ -36,7 +36,7 @@ interface NewsViewProps {
 
 const NewsView: React.FC<NewsViewProps> = ({ className }) => {
   return (
-    <div className={`p-4 pb-20 overflow-y-auto ${className}`}>
+    <div className={`p-4 pb-20 h-full ${className}`}>
       <div className="space-y-4">
         {NEWS_ITEMS.map((item) => (
           <NewsCard key={item.id} item={item} />

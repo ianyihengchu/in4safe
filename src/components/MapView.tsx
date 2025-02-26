@@ -38,7 +38,7 @@ const MapView: React.FC<MapViewProps> = ({ incidents, homeLocation, onIncidentCl
       
       {/* Home location marker */}
       <div 
-        className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2"
+        className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
         style={{ 
           top: `${50 + (homeLocation.lat - 43.648) * 1000}px`, 
           left: `${50 + (homeLocation.lng + 79.397) * 1000}px` 
@@ -55,7 +55,7 @@ const MapView: React.FC<MapViewProps> = ({ incidents, homeLocation, onIncidentCl
       {incidents.map((incident) => (
         <div
           key={incident.id}
-          className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+          className="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer pointer-events-auto"
           style={{ 
             top: `${50 + (incident.position.lat - 43.648) * 1000}px`, 
             left: `${50 + (incident.position.lng + 79.397) * 1000}px` 

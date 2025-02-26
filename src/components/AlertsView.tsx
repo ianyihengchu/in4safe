@@ -76,7 +76,7 @@ interface AlertsViewProps {
 
 const AlertsView: React.FC<AlertsViewProps> = ({ className }) => {
   return (
-    <div className={`p-4 pb-20 overflow-y-auto ${className}`}>
+    <div className={`p-4 pb-20 h-full ${className}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {ALERTS_ITEMS.map((item) => (
           <AlertCard key={item.id} item={item} />

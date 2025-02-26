@@ -99,8 +99,8 @@ const Dashboard = () => {
 
       {/* Main content - map always at the bottom, other content floating above */}
       <main className="flex-1 mt-16 relative overflow-hidden">
-        {/* Map view - always present in the background */}
-        <div className="absolute inset-0 z-0">
+        {/* Map view - always present in the background, fixed position */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <MapView 
             incidents={INCIDENTS} 
             homeLocation={HOME_LOCATION}
@@ -108,15 +108,15 @@ const Dashboard = () => {
           />
         </div>
         
-        {/* Overlaid views on top of the map */}
+        {/* Overlaid views on top of the map with scrollable content */}
         {activeTab === 'NEWS' && (
-          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm">
+          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm overflow-auto">
             <NewsView className="animate-fade-in" />
           </div>
         )}
         
         {activeTab === 'ALERTS' && (
-          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm">
+          <div className="absolute inset-0 z-10 bg-black/20 backdrop-blur-sm overflow-auto">
             <AlertsView className="animate-fade-in" />
           </div>
         )}
