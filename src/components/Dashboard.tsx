@@ -5,6 +5,7 @@ import IncidentPopup from './IncidentPopup';
 import Navbar from './Navbar';
 import Header from './Header';
 import AddAlertForm from './AddAlertForm';
+import NewsView from './NewsView';
 
 // Sample incident data
 const INCIDENTS = [
@@ -97,11 +98,17 @@ const Dashboard = () => {
 
       {/* Main content - using the full height minus header and navbar */}
       <main className="flex-1 mt-16 mb-20">
-        <MapView 
-          incidents={INCIDENTS} 
-          homeLocation={HOME_LOCATION}
-          onIncidentClick={handleIncidentClick}
-        />
+        {activeTab === 'HOME' && (
+          <MapView 
+            incidents={INCIDENTS} 
+            homeLocation={HOME_LOCATION}
+            onIncidentClick={handleIncidentClick}
+          />
+        )}
+        
+        {activeTab === 'NEWS' && (
+          <NewsView className="animate-fade-in" />
+        )}
         
         {selectedIncident && (
           <IncidentPopup 
